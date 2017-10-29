@@ -1,14 +1,20 @@
+/**
+ * Driver for BrianarySort.
+ * 
+ * @author Brian Burgess
+ */
+
 #include <iostream>
 #include <algorithm>
-#include <ctime>
+#include <stdlib.h>
 
 unsigned long binarySearch(unsigned long * const data, unsigned long const key, unsigned long const indexOfKey, unsigned long const size);
 bool isAtEndOFArray(unsigned long * const data, unsigned long const low, unsigned long const high, unsigned long const key);
 unsigned long returnIndex(unsigned long * const data, unsigned long const middle, unsigned long const key, unsigned long const indexOfKey, unsigned long const size);
 
-int main(){
+int main(int argc, char * argv[]){
 
-    unsigned long size = 100000;
+    unsigned long size = (unsigned long) strtol(argv[1], NULL, 10);
     unsigned long * array = new unsigned long[size]; //makes array of size "size"
 
     for(unsigned long i = 0, x = size-1; i<size; i++, x--){//populates array
